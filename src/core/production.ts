@@ -15,6 +15,7 @@ const production = async (
 ) => {
   debug('Bot runs in production mode');
   debug(`setting webhook: ${VERCEL_URL}`);
+  console.log('setting webhook:',VERCEL_URL)
 
   if (!VERCEL_URL) {
     throw new Error('VERCEL_URL is not set.');

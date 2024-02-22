@@ -8,6 +8,7 @@
   "dependencies": {
     "@vercel/node": "^3.0.13",
     "dotenv-cli": "^7.3.0",
+    "superagent": "^8.1.2",
     "telegraf": "^4.15.3"
   },
   "devDependencies": {
