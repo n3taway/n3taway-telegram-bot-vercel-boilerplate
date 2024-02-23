@@ -25,7 +25,7 @@ async function main() {
   .set("Cookie", process.env.M_COOKIE)
   .set("Host", process.env.M_HOST)
   
-  console.log('🚧 -> file: index.ts。 res: ', res.text);
+  console.log('🚧 -> file: index.ts。 res: ', res.text.replace(/\s+|[\r\n]+/g, ''));
 }
 
 main();
