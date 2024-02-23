@@ -138,6 +138,11 @@
   "resolved" "https://registry.npmmirror.com/@tsconfig/node16/-/node16-1.0.4.tgz"
   "version" "1.0.4"
 
+"@types/cookiejar@^2.1.5":
+  "integrity" "sha512-he+DHOWReW0nghN24E1WUqM0efK4kI9oTqDm6XmK8ZPe2djZ90BSNdGnIyCLzCPw7/pogPlGbzI2wHGGmi4O/Q=="
+  "resolved" "https://registry.npmjs.org/@types/cookiejar/-/cookiejar-2.1.5.tgz"
+  "version" "2.1.5"
+
 "@types/debug@^4.1.12":
   "integrity" "sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ=="
   "resolved" "https://registry.npmmirror.com/@types/debug/-/debug-4.1.12.tgz"
@@ -149,6 +154,11 @@
   "integrity" "sha512-U3PUjAudAdJBeC2pgN8uTIKgxrb4nlDF3SF0++EldXQvQBGkpFZMSnwQiIoDU77tv45VgNkl/L4ouD+rEomujw=="
   "resolved" "https://registry.npmmirror.com/@types/json-schema/-/json-schema-7.0.14.tgz"
   "version" "7.0.14"
+
+"@types/methods@^1.1.4":
+  "integrity" "sha512-ymXWVrDiCxTBE3+RIrrP533E70eA+9qu7zdWoHuOmGujkYtzf4HQF96b8nwHLqhuf4ykX61IGRIB38CC6/sImQ=="
+  "resolved" "https://registry.npmjs.org/@types/methods/-/methods-1.1.4.tgz"
+  "version" "1.1.4"
 
 "@types/ms@*":
   "integrity" "sha512-AuHIyzR5Hea7ij0P9q7vx7xu4z0C28ucwjAZC0ja7JhINyCnOw8/DnvAPQQ9TfOlCtZAmCERKQX9+o1mgQhuOQ=="
@@ -166,6 +176,15 @@
   "integrity" "sha512-qelS/Ra6sacc4loe/3MSjXNL1dNQ/GjxNHVzuChwMfmk7HuycRLVQN2qNY3XahK+fZc5E2szqQSKUyAF0E+2bg=="
   "resolved" "https://registry.npmmirror.com/@types/node/-/node-14.18.33.tgz"
   "version" "14.18.33"
+
+"@types/superagent@^8.1.3":
+  "integrity" "sha512-R/CfN6w2XsixLb1Ii8INfn+BT9sGPvw74OavfkW4SwY+jeUcAwLZv2+bXLJkndnimxjEBm0RPHgcjW9pLCa8cw=="
+  "resolved" "https://registry.npmjs.org/@types/superagent/-/superagent-8.1.3.tgz"
+  "version" "8.1.3"
+  dependencies:
+    "@types/cookiejar" "^2.1.5"
+    "@types/methods" "^1.1.4"
+    "@types/node" "*"
 
 "@vercel/build-utils@7.7.0":
   "integrity" "sha512-dYE0QKnRj9tN1F2AAKHagh3QkgQhz7AWcrRqnp5gjEp74EnxBKJIcZe5qqyKANMCLQ1e96RYy1pQB3zPMGeEzg=="
@@ -536,10 +555,10 @@
   "resolved" "https://registry.npmmirror.com/dotenv-expand/-/dotenv-expand-10.0.0.tgz"
   "version" "10.0.0"
 
-"dotenv@^16.3.0":
-  "integrity" "sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ=="
-  "resolved" "https://registry.npmmirror.com/dotenv/-/dotenv-16.3.1.tgz"
-  "version" "16.3.1"
+"dotenv@^16.3.0", "dotenv@^16.4.5":
+  "integrity" "sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz"
+  "version" "16.4.5"
 
 "edge-runtime@2.5.9":
   "integrity" "sha512-pk+k0oK0PVXdlT4oRp4lwh+unuKB7Ng4iZ2HB+EZ7QCEQizX360Rp/F4aRpgpRgdP2ufB35N+1KppHmYjqIGSg=="
@@ -578,9 +597,9 @@
   "resolved" "https://registry.npmmirror.com/es-module-lexer/-/es-module-lexer-1.4.1.tgz"
   "version" "1.4.1"
 
-"esbuild-windows-64@0.14.47":
-  "integrity" "sha512-/Pk5jIEH34T68r8PweKRi77W49KwanZ8X6lr3vDAtOlH5EumPE4pBHqkCUdELanvsT14yMXLQ/C/8XPi1pAtkQ=="
-  "resolved" "https://registry.npmmirror.com/esbuild-windows-64/-/esbuild-windows-64-0.14.47.tgz"
+"esbuild-darwin-64@0.14.47":
+  "integrity" "sha512-R6oaW0y5/u6Eccti/TS6c/2c1xYTb1izwK3gajJwi4vIfNs1s8B1dQzI1UiC9T61YovOQVuePDcfqHLT3mUZJA=="
+  "resolved" "https://registry.npmmirror.com/esbuild-darwin-64/-/esbuild-darwin-64-0.14.47.tgz"
   "version" "0.14.47"
 
 "esbuild@0.14.47":
@@ -694,6 +713,11 @@
   "integrity" "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
   "resolved" "https://registry.npmmirror.com/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
+
+"fsevents@~2.3.2":
+  "integrity" "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="
+  "resolved" "https://registry.npmmirror.com/fsevents/-/fsevents-2.3.3.tgz"
+  "version" "2.3.3"
 
 "function-bind@^1.1.2":
   "integrity" "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA=="
