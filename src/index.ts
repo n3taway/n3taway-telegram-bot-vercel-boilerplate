@@ -72,15 +72,15 @@ async function handleOulu() {
 }
 
 export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
-  // const {
-  //   title,
-  //   brief,
-  //   momoOriginalWords,
-  //   momoWordList,
-  //   tagIds,
-  // } = await handleMomo();
+  const {
+    title,
+    brief,
+    momoOriginalWords,
+    momoWordList,
+    tagIds,
+  } = await handleMomo();
 
-  const { ouLuWords } = await handleOulu();
+  // const { ouLuWords } = await handleOulu();
 
   // 处理新增的单词 两个词库的差集
   // let addWords = ouLuWords.filter((word: string) => !momoWordList.includes(word));
