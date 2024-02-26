@@ -72,13 +72,13 @@ async function handleOulu() {
 }
 
 export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
-  // const {
-  //   title,
-  //   brief,
-  //   momoOriginalWords,
-  //   momoWordList,
-  //   tagIds,
-  // } = await handleMomo();
+  const {
+    title,
+    brief,
+    momoOriginalWords,
+    momoWordList,
+    tagIds,
+  } = await handleMomo();
 
   // const { ouLuWords } = await handleOulu();
 
