@@ -101,13 +101,13 @@ export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
     .set('Content-Type', 'application/x-www-form-urlencoded')
     .set('Content-Length', data.length)
     .send(data);
-  console.log('🚧 -> file: index.ts。 res: ', saveRes.text.replace(/\s+|[\r\n]+/g, ''));
+  // console.log('🚧 -> file: index.ts。 res: ', saveRes.text.replace(/\s+|[\r\n]+/g, ''));
   // const saveResJson = JSON.parse(saveRes.text);
   // if (saveResJson.valid === 1) {
   //   console.log('保存成功');
   // }
   // 处理 Vercel Serverless Function 响应，避免部署后访问超时
-  ENVIRONMENT === 'production' && res.status(200).json('Listening to bot events...');
+  ENVIRONMENT === 'production' && res.status(200).json(saveRes.text);
 }
 
 // @ts-ignore
