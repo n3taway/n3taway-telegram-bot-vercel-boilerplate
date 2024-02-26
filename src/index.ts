@@ -100,6 +100,7 @@ export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
     .post('https://www.maimemo.com/notepad/save')
     .set('Content-Type', 'application/x-www-form-urlencoded')
     .set('Content-Length', data.length)
+    .set('authority', 'www.maimemo.com')
     .send(data);
   // console.log('🚧 -> file: index.ts。 res: ', saveRes.text.replace(/\s+|[\r\n]+/g, ''));
   // const saveResJson = JSON.parse(saveRes.text);
