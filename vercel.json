@@ -1,11 +1,4 @@
 {
   "version": 2,
-  "public": true,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "api/index.ts"
-    }
-  ],
-  "redirects": [{ "source": "/", "destination": "/api", "permanent": false }]
+  "public": true
 }
