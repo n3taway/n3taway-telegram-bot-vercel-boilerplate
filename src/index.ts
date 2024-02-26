@@ -110,6 +110,6 @@ export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
 }
 
 // @ts-ignore
-startVercel();
+ENVIRONMENT !== 'production' && startVercel();
 //dev mode
 // ENVIRONMENT !== 'production' && development(bot);
