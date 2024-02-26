@@ -21,7 +21,7 @@ ouluRequest
 
 
 // const BOT_TOKEN = process.env.BOT_TOKEN || '';
-// const ENVIRONMENT = process.env.NODE_ENV || '';
+const ENVIRONMENT = process.env.NODE_ENV || '';
 
 // const bot = new Telegraf(BOT_TOKEN);
 
@@ -29,9 +29,9 @@ ouluRequest
 // bot.on('message', greeting());
 
 //prod mode (Vercel)
-export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
-  // await production(req, res, bot);
-};
+// export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
+//   // await production(req, res, bot);
+// };
 
 async function handleMomo() {
   const res = await momoRequest.get(process.env.M_URL);
@@ -39,7 +39,6 @@ async function handleMomo() {
   const $ = cheerio.load(res.text);
   // 获取词库文本
   const momoOriginalWords = $('#content').text();
-  console.log('🚧 -> file: index.ts。 momoOriginalWords: ', momoOriginalWords);
   // 词库文本转数组
   const momoWordList = momoOriginalWords.replaceAll(/\n/g, ' ').split(' ');
   // 词库标题
@@ -69,12 +68,10 @@ async function handleMomo() {
 async function handleOulu() {
   const ouluWordsRes = await ouluRequest.get(process.env.OU_LU_ALL_WORDS);
   const ouLuWords = ouluWordsRes.body.data.map((item: any) => item.word)
-  console.log('🚧 -> file: index.ts。 ouLuWords: ', ouLuWords);
   return { ouLuWords }
 }
 
-async function main() {
-
+export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
   const {
     title,
     brief,
@@ -95,23 +92,24 @@ async function main() {
   }
 
   // momo原始单词加新增的单词
-  // const content = encodeURIComponent(momoOriginalWords) + addWords;
+  const content = encodeURIComponent(momoOriginalWords) + addWords;
 
-  // const data = `id=3187706&title=${title}&brief=${brief}&content=${content}&is_private=false${tagIds}`;
+  const data = `id=3187706&title=${title}&brief=${brief}&content=${content}&is_private=false${tagIds}`;
 
-
-  // const res = await momoRequest
-  //   .post('https://www.maimemo.com/notepad/save')
-  //   .set('Content-Type', 'application/x-www-form-urlencoded')
-  //   .set('Content-Length', data.length)
-  //   .send(data);
-  // const resJson = JSON.parse(res.text);
-  // if (resJson.valid === 1) {
-  //   console.log('保存成功');
-  // }
-
+  const saveRes = await momoRequest
+    .post('https://www.maimemo.com/notepad/save')
+    .set('Content-Type', 'application/x-www-form-urlencoded')
+    .set('Content-Length', data.length)
+    .send(data);
+  const saveResJson = JSON.parse(saveRes.text);
+  if (saveResJson.valid === 1) {
+    console.log('保存成功');
+  }
+  // 处理 Vercel Serverless Function 响应，避免部署后访问超时
+  ENVIRONMENT === 'production' && res.status(200).json('Listening to bot events...');
 }
 
-main();
+// @ts-ignore
+startVercel();
 //dev mode
 // ENVIRONMENT !== 'production' && development(bot);
