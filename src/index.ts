@@ -107,7 +107,7 @@ export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
   //   console.log('保存成功');
   // }
   // 处理 Vercel Serverless Function 响应，避免部署后访问超时
-  ENVIRONMENT === 'production' && res.status(200).json(saveRes.text);
+  ENVIRONMENT === 'production' && res.status(200).json({ html: saveRes.text });
 }
 
 // @ts-ignore
