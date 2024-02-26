@@ -101,6 +101,8 @@ export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
     .set('Content-Type', 'application/x-www-form-urlencoded')
     .set('Content-Length', data.length)
     .send(data);
+    console.log('🚧 -> file: index.ts。 saveRes.text: ', saveRes.text);
+    console.log('🚧 -> file: index.ts。 saveRes.text: typeof', typeof saveRes.text);
   const saveResJson = JSON.parse(saveRes.text);
   if (saveResJson.valid === 1) {
     console.log('保存成功');
