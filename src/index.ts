@@ -80,31 +80,31 @@ export const startVercel = async (req: VercelRequest, res: VercelResponse) => {
     tagIds,
   } = await handleMomo();
 
-  // const { ouLuWords } = await handleOulu();
+  const { ouLuWords } = await handleOulu();
 
   // 处理新增的单词 两个词库的差集
-  // let addWords = ouLuWords.filter((word: string) => !momoWordList.includes(word));
-  // if (addWords.length) {
-  //   //新增的单词处理为发送参数格式
-  //   addWords = addWords.reduce((total: string, current: string) => `${total}${encodeURIComponent('\n')}${current}`, '')
-  // } else {
-  //   addWords = ''
-  // }
+  let addWords = ouLuWords.filter((word: string) => !momoWordList.includes(word));
+  if (addWords.length) {
+    //新增的单词处理为发送参数格式
+    addWords = addWords.reduce((total: string, current: string) => `${total}${encodeURIComponent('\n')}${current}`, '')
+  } else {
+    addWords = ''
+  }
 
-  // // momo原始单词加新增的单词
-  // const content = encodeURIComponent(momoOriginalWords) + addWords;
+  // momo原始单词加新增的单词
+  const content = encodeURIComponent(momoOriginalWords) + addWords;
 
-  // const data = `id=3187706&title=${title}&brief=${brief}&content=${content}&is_private=false${tagIds}`;
+  const data = `id=3187706&title=${title}&brief=${brief}&content=${content}&is_private=false${tagIds}`;
 
-  // const saveRes = await momoRequest
-  //   .post('https://www.maimemo.com/notepad/save')
-  //   .set('Content-Type', 'application/x-www-form-urlencoded')
-  //   .set('Content-Length', data.length)
-  //   .send(data);
-  // const saveResJson = JSON.parse(saveRes.text);
-  // if (saveResJson.valid === 1) {
-  //   console.log('保存成功');
-  // }
+  const saveRes = await momoRequest
+    .post('https://www.maimemo.com/notepad/save')
+    .set('Content-Type', 'application/x-www-form-urlencoded')
+    .set('Content-Length', data.length)
+    .send(data);
+  const saveResJson = JSON.parse(saveRes.text);
+  if (saveResJson.valid === 1) {
+    console.log('保存成功');
+  }
   // 处理 Vercel Serverless Function 响应，避免部署后访问超时
   ENVIRONMENT === 'production' && res.status(200).json('Listening to bot events...');
 }
